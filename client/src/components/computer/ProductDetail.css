@@ -1,6 +1,5 @@
 .productDetail {
     height: 100vh;
-    background-color: #f8eee1;
     display: flex;
     justify-content: center;
 }
@@ -31,6 +30,10 @@
 .productListBox span:nth-child(1) {
     margin-bottom: 20px;
     font-size: 25px;
+}
+.productListBox > span {
+    margin-bottom: 20px;
+    
 }
 
 .btnBox {

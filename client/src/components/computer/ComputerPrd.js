@@ -9,14 +9,14 @@ function ComputerPrd(props) {
     return (
                          
         <TableRow >          
-            <TableCell style={{padding: 5, width: "120px"}}>{props.product_name}</TableCell>
-            <TableCell style={{padding: 5}}>
+            <TableCell>{props.product_name}</TableCell>
+            <TableCell>
                 <Link to={`/productDetail/${props.id}`}>
                 <img src={props.product_image} className="product_img"/>
                 </Link>
             </TableCell>
-            <TableCell style={{padding: 5}}>{props.product_desc.length < 50 ? props.product_desc : props.product_desc.slice(0, 50) + '...'}</TableCell>
-            <TableCell style={{padding: 5, textAlign: "center"}}>{props.product_price} <br/>
+            <TableCell>{props.product_desc.length < 20 ? props.product_desc : props.product_desc.slice(0, 20) + '...'}</TableCell>
+            <TableCell>{props.product_price} <br/>
                         <button className='cart'>담기</button></TableCell>
         </TableRow>    
              

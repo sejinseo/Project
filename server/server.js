@@ -5,12 +5,15 @@ const app = express();
 const port = process.env.PORT || 5000;
 const api = require("./routes/index");
 const cors = require('cors');
+const jwt = require('jsonwebtoken');
+const cookieParser = require('cookie-parser');
 
 const { google } = require("googleapis");
 const googleClient = require('./config/google.json');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
+app.use(cookieParser());
 
 const googleConfig
     = {
@@ -128,9 +131,6 @@ app.post('/api/users/register', (req, res) => {
 
 });
 
-
-
-
 app.post('/api/users/login', (req, res) => {
 
     let sql = "select * from users where email=? and pw=?";
@@ -144,7 +144,19 @@ app.post('/api/users/login', (req, res) => {
         console.log(rows);
 
         if (rows.length>0){
-            res.json({ loginSuccess: true });
+            
+            var usertoken = jwt.sign(userEmail, 'secretToken');
+
+            let sql = 'update users set token=? where email=?'
+            let token = usertoken
+            console.log(token);
+            let params = [token, userEmail];
+            connection.query(sql, params, (err, rows, fields) => {
+                res.cookie("w_auth", usertoken).status(200).json({loginSuccess: true, token: usertoken});
+            })
+           
+
+            
         }else{
             res.status(200).json({loginSuccess: false});
         }

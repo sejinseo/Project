@@ -13,7 +13,7 @@ import KaKao from '../../KaKao';
 import './SignUpModal.css';
 
 const SignUpModal = ({show, onHide}) => {
-
+    
     const dispatch = useDispatch();
     const navigate = useNavigate();
 

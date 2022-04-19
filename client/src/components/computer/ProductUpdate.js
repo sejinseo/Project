@@ -61,10 +61,9 @@ function ProductUpload() {
         <Header />
         
         <div className="home_containerLine" />       
-        <div className="productUpload">           
-            <form onSubmit={productUpload} className="productBox">
-            
-                <div className="title">상품등록</div>
+        <div className="productUpdate">           
+            <form onSubmit={productUpload} className="productBox">           
+                <div className="title">상품수정</div>
                     <button type="submit" className="upload">저장</button>
                     <input className="input" type="text" value={product_name} onChange={onNameHandler} placeholder="상품 이름을 입력해주세요" />            
                     <textarea placeholder="상품 내용을 입력해주세요" style={{width: "100%", height: "400px", marginLeft: "0", marginTop: "8px"}}
