@@ -22,7 +22,7 @@ function ProductDelete(props) {
           fetch('/api/users/product/'+ id, {
             method: 'DELETE'
           })
-          .then(navigate('/computershop'))
+          .then(navigate('/computershop2'))
           .catch(err => console.log(err))     
     }
 

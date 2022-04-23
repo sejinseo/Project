@@ -147,16 +147,8 @@ app.post('/api/users/login', (req, res) => {
             
             var usertoken = jwt.sign(userEmail, 'secretToken');
 
-            let sql = 'update users set token=? where email=?'
-            let token = usertoken
-            console.log(token);
-            let params = [token, userEmail];
-            connection.query(sql, params, (err, rows, fields) => {
-                res.cookie("w_auth", usertoken).status(200).json({loginSuccess: true, token: usertoken});
-            })
-           
-
-            
+            res.cookie("w_auth", usertoken).status(200).json({loginSuccess: true, token: usertoken});
+         
         }else{
             res.status(200).json({loginSuccess: false});
         }
@@ -166,7 +158,7 @@ app.post('/api/users/login', (req, res) => {
 
 app.get('/api/users/product', (req, res) => {
     connection.query(
-        "select * from product", (err, rows, fields) => {
+        "select * from product order by id desc ", (err, rows, fields) => {
             res.send(rows);
         }
     )

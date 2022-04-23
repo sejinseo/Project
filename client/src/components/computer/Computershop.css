@@ -4,6 +4,11 @@
     margin: 0 auto;
     padding-top: 100px;
     position: relative;
+    
+}
+
+.body {
+    background-color: #f8eee1;
 }
 
 .product_img {

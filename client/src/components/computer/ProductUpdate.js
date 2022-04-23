@@ -52,7 +52,7 @@ function ProductUpload() {
         axios.post('/api/users/productUpdate/' + id, formData, config)
         .then(response => {
             console.log(response);
-            navigate('/computershop');
+            navigate('/computershop2');
         })
     }
 

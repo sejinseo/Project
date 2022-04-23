@@ -19,7 +19,7 @@ function Header() {
         <SignInModal show={signInModalOn} onHide={() => setSignInModalOn(false)} />
         <div className="header">
             <Link to="/" className='link_box'>
-                <div className='header_logo'>team2</div>         
+                <div className='header_logo'><img src="../../img/logo.webp"/></div>         
             </Link>
             {/*<img className="header_logo" src="img/logo.webp" /> */}
             {/* 로고 이미지를 클릭하면 home으로 갈 수 있게 Link에 url 입력후 이미지 태그를 감싼다. */}
@@ -29,7 +29,7 @@ function Header() {
                     <Link to="/" className="link_box">
                         <li>Home</li>
                     </Link>
-                    <Link to="/computershop" className="link_box">
+                    <Link to="/computershop2" className="link_box">
                         <li>Computer</li>
                     </Link>
                     <Link to="/camerashop" className="link_box">
@@ -52,14 +52,14 @@ function Header() {
                     </Link>
                 </div>
                 
-                <div className="header_optionBasket">
+                {/* <div className="header_optionBasket">
                     <Link to="/checkout" className="link_box">
                     <ShoppingBasket/>
                     <span className="header_optionLineTwoheader_basketCount">
                         0
                     </span>
                     </Link>
-                </div>
+                </div> */}
             </div>
         </div>
         </>

@@ -11,6 +11,7 @@ import ProductUpload from "./components/computer/ProductUpload";
 import ProductDetail from "./components/computer/ProductDetail";
 import ProductUpdate from "./components/computer/ProductUpdate";
 import Profile from "./components/users/Profile";
+import Computershop2 from "./components/computer/Computershop2";
 
 
 
@@ -32,6 +33,7 @@ function App() {
           <Route path="/productDetail/:id" element={<ProductDetail/>} />
           <Route path="/productUpdate/:id" element={<ProductUpdate />} />
           <Route path="/profile" element={<Profile/>} />
+          <Route path="/computershop2" element={<Computershop2/>} />
         </Routes>
       </div>
     </BrowserRouter>

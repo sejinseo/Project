@@ -12,9 +12,9 @@ function Home() {
             <Header />
             <div className="home_container1"> 
                 <div className="home_container_imgBox1">
-                    <img className="home_container1_img1" src="img/container1.webp"/>
+                    <img className="home_container1_img1" src="img/container1.png"/>
                     <img className="home_container1_img2" src="img/container2.webp"/>
-                    <Link to="/computershop">
+                    <Link to="/computershop2">
                         <span className="home_container1_text1">Computer Shop</span>
                         <img className='arrow' src="img/ArrowWHT.webp" />
                     </Link>
